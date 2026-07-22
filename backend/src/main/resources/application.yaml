@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: backend
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:igbot}
+    username: ${DB_USER:igbot}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+discord:
+  bot-token: ${DISCORD_BOT_TOKEN}
+
+server:
+
+  port: 8080
+meta:
+
+  verify-token: ${META_VERIFY_TOKEN:dev-verify-token}
